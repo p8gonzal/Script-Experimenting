@@ -18,5 +18,9 @@ read -p "Enter commit message: " message
 git commit -m "$message"
 echo "Changes saved..."
 read -p "Confirm push to remote: [y/n]" approval
-
+    if [ "$approval" == "y" ]; then
+        git push origin
+    else
+        echo "Commits not pushed."
+    fi
 fi
